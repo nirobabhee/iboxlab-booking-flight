@@ -14,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::namespace('Api')->name('api.')->group(function(){
+    #route is white here
+
+    Route::controller('FlightController')->prefix('flights')->group(function () {
+        Route::get('search', 'search');
+    });
+
+    Route::controller('BookingController')->prefix('bookings')->group(function () {
+        Route::post('/', 'store');
+        Route::get('{reference}', 'show');
+    });
 
     Route::controller('AppController')->group(function () {
         Route::get('general-setting','generalSetting');

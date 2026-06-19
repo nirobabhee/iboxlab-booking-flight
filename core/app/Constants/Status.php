@@ -40,4 +40,9 @@ class Status{
     const CUR_TEXT = 2;
     const CUR_SYM = 3;
 
+
+     const BOOKING_CONFIRMED = 1;
+    const BOOKING_CANCELLED = 2;
+    const BOOKING_REFUNDED = 3;
+
 }
