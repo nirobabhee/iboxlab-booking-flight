@@ -1,0 +1,136 @@
+{
+  "info": {
+    "_postman_id": "df4aba80-117b-4fb8-a16b-c38da675a17c",
+    "name": "iboxLab Exercise",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "40003561"
+  },
+  "item": [
+    {
+      "name": "Search Flights",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1/iboxlab-booking-task/api/flights/search?from=DAC&to=DXB&date=2026-07-01&passengers=2",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "path": [
+            "iboxlab-booking-task",
+            "api",
+            "flights",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "from",
+              "value": "DAC"
+            },
+            {
+              "key": "to",
+              "value": "DXB"
+            },
+            {
+              "key": "date",
+              "value": "2026-07-01"
+            },
+            {
+              "key": "passengers",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Booking",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "{\r",
+              "  \"flight_id\": \"FL12345\",\r",
+              "  \"from\": \"DAC\",\r",
+              "  \"to\": \"CXB\",\r",
+              "  \"date\": \"2026-06-20\",\r",
+              "  \"passengers\": 2,\r",
+              "  \"contact_name\": \"Nirob Hasan\",\r",
+              "  \"contact_email\": \"nirob@example.com\",\r",
+              "  \"contact_phone\": \"01700000000\"\r",
+              "}"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"flight_id\": \"85b16d0a6a9dab9593c4d3d14cf0e9ad3636035b\",\r\n  \"from\": \"DAC\",\r\n  \"to\": \"DXB\",\r\n  \"date\": \"2026-07-01\",\r\n  \"passengers\": 2,\r\n  \"contact_name\": \"Nirob Abhee\",\r\n  \"contact_email\": \"nirob@example.com\",\r\n  \"contact_phone\": \"01700000000\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1/iboxlab-booking-task/api/bookings",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "path": [
+            "iboxlab-booking-task",
+            "api",
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Booking by Reference",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1/iboxlab-booking-task/api/bookings/:reference",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "path": [
+            "iboxlab-booking-task",
+            "api",
+            "bookings",
+            ":reference"
+          ],
+          "variable": [
+            {
+              "key": "reference",
+              "value": "BK0IEPRCILYP"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
